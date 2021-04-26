@@ -53,7 +53,7 @@ def copy_image(source_key, destination_key):
     s3.copy_object(
         Bucket=destination_bucket,
         CopySource={
-            'Bucket': destination_bucket,
+            'Bucket': source_bucket,
             'Key': source_key
         },
         Key=destination_key
@@ -84,7 +84,7 @@ def copy_file(source_key, destination_key):
         s3.copy_object(
             Bucket=destination_bucket,
             CopySource={
-                'Bucket': destination_bucket,
+                'Bucket': source_bucket,
                 'Key': source_key
             },
             Key=destination_key
